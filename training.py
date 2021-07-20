@@ -62,5 +62,5 @@ while True:
         phase += 1
         #print(time.perf_counter())
         print("Phase " + str(phase) + " ended")
- time.sleep
+time.sleep
 
