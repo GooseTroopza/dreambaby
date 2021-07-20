@@ -1,4 +1,5 @@
 import time
+from gpiozero import LED, Button
 
 phase = 0
 timer = 0
@@ -8,7 +9,7 @@ timer_end = 0
 sound_input = bool(True)
 run = bool(True)
 start = False
-LED = False
+led = LED(4)
 silance_wait = 10
 silance_start = 0
 silance_run = 0
@@ -55,7 +56,9 @@ while True:
             stop()
             if not run:
                 break
-        LED = True
+        led.on()
+        time.sleep(5)
+        led.off()
         phase += 1
         #print(time.perf_counter())
         print("Phase " + str(phase) + " ended")
